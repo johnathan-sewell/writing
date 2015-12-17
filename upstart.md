@@ -4,7 +4,7 @@ From the Upstart page http://upstart.ubuntu.com/
 
 > Upstart ... handles starting of tasks and services during boot, stopping them during shutdown and supervising them while the system is running.
 
-For my simple script I want to ensure that my Node.js server is started when the server boots (so it survives restarts). (I could also make sure it is shut down gracefully when the server is restarting.)
+For my simple script I want to ensure that my Node.js server is started when the server boots (so it survives restarts). I could also make sure it is shut down gracefully when the server is restarting.
 
 ## Stanzas
 
