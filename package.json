@@ -1,4 +1,10 @@
 {
-  "name": "jonathansewell/writing",
-  "version": "1.0.0"
+  "name": "writing",
+  "version": "1.0.0",
+  "description": "Thing I write, in markdown format",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathansewell/writing.git"
+  },
+  "homepage": "https://github.com/jonathansewell/writing#readme"
 }
