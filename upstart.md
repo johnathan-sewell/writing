@@ -12,9 +12,15 @@ I found the key to understanding Upstart scripts is to understand that they cont
 
 ## Simple script
 
-The file is named **example-node-server.conf**
+The file is named **example-node-server.conf** and placed in /etc/init.
 
-Compare this with the satanza page linked above and it should start to make sense.
+Once in this folder the job will be automatically run by upstart depending on the events you've defined.
+
+You can manually start/stop this job with the start/stop/restart/status commands, for example to stop and start:
+
+`sudo service example-node-server restart`
+
+Here's my script, compare this with the satanza page linked above and it should make sense.
 
 ```
 description "Upstart Script for my Example Node Server"
@@ -26,6 +32,7 @@ stop on shutdown
 
 env APP_DIR=/home/jonathan/example-node-server
 
+# this specifies what will be run for the job, it contains shell script executed with /bin/sh (with -e so errors will terminate the script at once)
 script
         chdir $APP_DIR
         exec bash -c 'source /home/jonathan/example-node-server/.nvm/nvm.sh && nvm install && exec node .'
@@ -39,3 +46,10 @@ pre-stop script
         echo "[`date`] Example Server Stopping"
 end script
 ```
+
+### More information
+https://www.digitalocean.com/community/tutorials/the-upstart-event-system-what-it-is-and-how-to-use-it
+
+http://upstart.ubuntu.com/
+
+http://upstart.ubuntu.com/wiki/Stanzas
