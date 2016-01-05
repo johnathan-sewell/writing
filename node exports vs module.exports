@@ -1,1 +1,3 @@
+Just think of exports and module.exports as being two variables referencing the same object:
+var exports = module.exports = {}
 http://www.hacksparrow.com/node-js-exports-vs-module-exports.html
