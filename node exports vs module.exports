@@ -5,3 +5,5 @@ http://www.hacksparrow.com/node-js-exports-vs-module-exports.html
 From MArk E:
 `exports` is a reference to `module.exports` unless you make an `exports` variable (so it's just a short hand).
 Say you have two modules, each requiring the other. A module is given its `module.exports` object before it has been read, parsed, and executed. One has to be read before the other, so the module.exports of the one that is not read is used as a placeholder for in the other.(edited) If you overwrite `module.exports` in both, then the reference will change for one of the modules. It's usually considered bad to have circular references, so this rarely causes problems. When it does, it's very confusing though. Does that make any sense?
+
+ Replacing `module.exports` is actually not part of CommonJS. It's a Node extension.
