@@ -60,3 +60,6 @@ const appConfig = require('./config/konfigaLoader!./config/appConfig');
 // 	socketPort: '3000'
 // }
 ```
+
+## References
+This idea is based on [webpack-config-loader](https://github.com/frank-weindel/webpack-config-loader)
