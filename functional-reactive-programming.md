@@ -43,3 +43,16 @@ Observables "are iterators turned inside out", while you have to keep calling `n
 ```javascript
 myObservable.subscribe(success, error, complete);
 ```
+
+Creating an Observable from a websocket conection event
+```javascript
+var connectionObservable = rx.Observable.create(observer => {
+    socketServer.on('connection', (socket) => {
+        observer.onNext(socket);
+        // observer.onCompleted();  //signals the stream has completed (no more data)
+    });
+
+    //return cleanup function
+    return () => {};
+});
+```
