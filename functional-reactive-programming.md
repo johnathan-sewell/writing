@@ -56,3 +56,7 @@ var connectionObservable = rx.Observable.create(observer => {
     return () => {};
 });
 ```
+
+Best resources:
+https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
+https://xgrommx.github.io/rx-book
