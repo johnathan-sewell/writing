@@ -56,6 +56,23 @@ var connectionObservable = rx.Observable.create(observer => {
     return () => {};
 });
 ```
+```javascript
+const urlStream = (socket) => {
+    return rx.Observable.create(observer => {
+        try {
+            socket.on('launchUrl', (socketData) => {
+                observer.onNext(socketData);
+            });
+        } catch (error) {
+            observer.onError(error);
+        }
+
+        return () => {
+            socket.removeListener('launchUrl', observer.onNext); //cleanup
+        };
+    });
+};
+```
 
 Best resources:
 https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
