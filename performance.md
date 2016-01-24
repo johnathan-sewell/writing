@@ -44,3 +44,13 @@ The browser will also start rendering before all the resouces are available, and
 
 * Different browsers implement different logic for when, and in which order, the individual resource requests are dispatched. As a result, the performance of the application will vary from browser to browser.
 
+Turns out, bandwidth is not the limiting performance factor for most web applications. Instead, the bottleneck is the network roundtrip latency between the client and the server.
+
+## Networking, rendering, computing
+The execution of a web program primarily involves three tasks: fetching network resources, page layout + rendering, and JavaScript execution.
+
+Bandwidth doesn’t matter, much... increasing bandwidth yeilds less and less returns with latency constant. We need to speed up the network (cut latency) or reduce the number of requests and round trips (handshakes).
+
+TCP is optimized for long-lived connections and bulk data transfers. **Wireless latencies are significantly higher**, making networking optimization a critical priority for the mobile web
+
+TCP slow start?
