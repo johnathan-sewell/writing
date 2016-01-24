@@ -54,3 +54,11 @@ Bandwidth doesn’t matter, much... increasing bandwidth yeilds less and less re
 TCP is optimized for long-lived connections and bulk data transfers. **Wireless latencies are significantly higher**, making networking optimization a critical priority for the mobile web
 
 TCP slow start?
+
+## Automated vs Human Testing
+
+When configured well, automated testing provides a controlled and reproducible performance testing environment, which makes it a great fit for identifying and fixing performance regressions before they reach the user. Tip: identify your key performance metrics and set a "budget" for each one as part of your synthetic testing. If the budget is exceeded, raise an alarm!
+
+**Navigation Timing API** is now supported across many of the modern desktop and mobile browsers.
+
+The real benefit of Navigation Timing is that it exposes a lot of previously inaccessible data, such as DNS and TCP connect times, with high precision (microsecond timestamps), via a standardized `performance.timing object` in each browser. Hence, the data gathering process is very simple: load the page, grab the timing object from the user’s browser, and beacon it back to your analytics servers! By capturing this data, we can observe real-world performance of our applications as seen by real 
