@@ -63,7 +63,7 @@ set -e
 echo "-- running node via upstart"
 sudo service my-app restart
 
-echo "-- current running vizia daemons are:"
+echo "-- current running daemons are:"
 initctl list | grep my-app
 
 echo "for logs... sudo less /var/log/upstart/my-app.log (shift + f to follow)"
