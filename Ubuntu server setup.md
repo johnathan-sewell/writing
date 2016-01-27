@@ -1,3 +1,7 @@
+# Ubuntu Cloud Server Setup
+
+## Users and SSH Setup
+
 **login**
 
 ssh root@123.123.123.123
@@ -38,3 +42,12 @@ You should be able to `ssh` to this machine now, if you get prompted for the pas
 
 Update to:
 >PermitRootLogin no
+
+## Github
+Set up port forwarding https://developer.github.com/guides/using-ssh-agent-forwarding/
+
+## Node
+
+Install NVM via curl, find the command here: https://github.com/creationix/nvm
+
+Remember to reload your bash profile before you can use `nvm`.
