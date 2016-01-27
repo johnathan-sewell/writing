@@ -12,16 +12,19 @@ https://help.ubuntu.com/lts/serverguide/automatic-updates.html
 
 **create a sudo user**
 
-`adduser example_user`
-`adduser example_user sudo`
+```bash
+adduser example_user
+adduser example_user sudo
+```
 
 **install ssh keys**
 
 On the server, as your new user:
 
-`mkdir ~/.ssh`
-
-`chmod 700 ~/.ssh`
+```bash
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+```
 
 On your Mac:
 
