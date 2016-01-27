@@ -53,3 +53,31 @@ https://www.digitalocean.com/community/tutorials/the-upstart-event-system-what-i
 http://upstart.ubuntu.com/
 
 http://upstart.ubuntu.com/wiki/Stanzas
+
+### Dump old scripts
+
+```bash
+#!/usr/bin/env bash
+set -e
+
+echo "-- running node via upstart"
+sudo service my-app restart
+
+echo "-- current running vizia daemons are:"
+initctl list | grep my-app
+
+echo "for logs... sudo less /var/log/upstart/my-app.log (shift + f to follow)"
+```
+
+```
+# upstart script
+# place this file in: /etc/init/
+# output is logged to: /var/log/upstart/[scriptname].log
+# upstart "stanzas" are explained here: http://upstart.ubuntu.com/wiki/Stanzas
+start on filesystem or runlevel [2345]
+stop on shutdown
+script
+ cd /home/me/my-app
+ exec bash -c 'source /home/me/.nvm/nvm.sh && nvm install && exec scripts/deploy.production'
+end script
+```
