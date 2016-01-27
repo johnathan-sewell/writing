@@ -51,3 +51,11 @@ Set up port forwarding https://developer.github.com/guides/using-ssh-agent-forwa
 Install NVM via curl, find the command here: https://github.com/creationix/nvm
 
 Remember to reload your bash profile before you can use `nvm`.
+
+## Port forwarding
+Add to /etc/rc.local:
+
+`iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3001`
+This applies the forwarding after a reboot.
+
+To apply it now run the same command with sudo.
